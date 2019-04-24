@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 //  引入初始化CSS文件
 import '../static/reset.css'
+// 引入iconfont
+import './assets/icon/iconfont.css'
 import 'lib-flexible'
 
 Vue.config.productionTip = false

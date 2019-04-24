@@ -24,5 +24,10 @@ export default {
 </script>
 
 <style scoped>
+  .home{
+    /* 设置为flex弹性布局 */
+    display: flex;
+    flex-direction: column;
 
+  }
 </style>

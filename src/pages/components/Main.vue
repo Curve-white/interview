@@ -12,8 +12,9 @@ export default {
 <style lang="scss" scoped>
 $color:pink;
 .main {
+  // 以下 flex: auto;不知道为何不生效
+  // flex: auto;
   height: 1086px;
-  overflow: hidden;
   background: $color;
 }
 

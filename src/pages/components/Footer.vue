@@ -1,5 +1,7 @@
 <template>
-  <div class="footer">footer</div>
+  <div class="footer">
+    <input class="footerButton" type="button" value="我选好了">
+  </div>
 </template>
 
 <script>
@@ -12,8 +14,18 @@ export default {
 <style lang="scss" scoped>
 $color:blue;
 .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 120px;
-  background: $color;
+}
+.footerButton{
+  width: 630px;
+  height: 80px;
+  font-size: 32px;
+  color: white;
+  background: #FF8833;
+  border-radius: 8px;
 }
 
 </style>
