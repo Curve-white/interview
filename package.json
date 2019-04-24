@@ -11,9 +11,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "lib-flexible": "^0.3.2",
     "node-sass": "^4.11.0",
-    "postcss-px2rem": "^0.3.0",
-    "px2rem-loader": "^0.1.9",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
@@ -50,7 +49,9 @@
     "portfinder": "^1.0.13",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
+    "postcss-px2rem": "^0.3.0",
     "postcss-url": "^7.2.1",
+    "px2rem-loader": "^0.1.9",
     "rimraf": "^2.6.0",
     "sass-loader": "^7.1.0",
     "semver": "^5.3.0",
@@ -60,7 +61,7 @@
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
-    "webpack": "^3.6.0",
+    "webpack": "^3.12.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
     "webpack-merge": "^4.1.0"

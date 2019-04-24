@@ -12,8 +12,7 @@ export default {
 <style lang="scss" scoped>
 $color:red;
 .header {
-  width: 100%;
-  height: px2rem(88);
+  height: 128px;
   background: $color;
 }
 

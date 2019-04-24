@@ -12,8 +12,8 @@ export default {
 <style lang="scss" scoped>
 $color:pink;
 .main {
-  width: 100%;
-  height: px2rem(1086);
+  height: 1086px;
+  overflow: hidden;
   background: $color;
 }
 
