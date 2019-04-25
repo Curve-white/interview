@@ -10,7 +10,7 @@
 // 引入局部组件
 import HomeHeader from './components/Header'
 import HomeFooter from './components/Footer'
-import HomeMain from './components/Main'
+import HomeMain from './components/Main/Main'
 
 export default {
   name: 'Home',
@@ -28,6 +28,5 @@ export default {
     /* 设置为flex弹性布局 */
     display: flex;
     flex-direction: column;
-
   }
 </style>

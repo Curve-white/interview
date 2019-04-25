@@ -1,6 +1,8 @@
 <template>
   <div class="footer">
-    <input class="footerButton" type="button" value="我选好了">
+    <div class="footerMain">
+      <input class="footerButton" type="button" value="我选好了">
+    </div>
   </div>
 </template>
 
@@ -12,12 +14,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color:blue;
 .footer {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 120px;
+}
+.footerMain{
+  position: fixed;
+  bottom: 20px;
 }
 .footerButton{
   width: 630px;

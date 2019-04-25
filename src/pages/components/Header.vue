@@ -11,7 +11,11 @@
         <span class="iconfont icon-80dianliang"></span>
       </div>
     </div>
-    <div class="title">选择可面试时间</div>
+    <div class="title">
+      <span class="iconfont icon-x"></span>
+      <span class="titleInfo">选择可面试时间</span>
+      <span class="iconfont icon-more"></span>
+    </div>
   </div>
 </template>
 
@@ -27,6 +31,7 @@ export default {
   height: 128px;
   background: #EDEDED;
 }
+// 状态栏样式
 .statusBar{
   // 设置为flex布局
   display: flex;
@@ -34,9 +39,6 @@ export default {
   justify-content: space-between;
   align-items: center;
   height: 40px;
-}
-.title{
-  height: 88px;
 }
 .icon-xinhao, .icon-wangluoxinhao{
   margin-left: 3px;
@@ -51,6 +53,22 @@ export default {
 }
 .icon-80dianliang{
   margin-right: 3px;
+  font-size: 36px;
+}
+// title样式
+.title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88px;
+  font-size: 40px;
+  font-weight: bold;
+}
+.icon-x, .icon-more{
+  margin: 0 35px;
   font-size: 35px;
+}
+.icon-more{
+  font-size: 45px;
 }
 </style>
