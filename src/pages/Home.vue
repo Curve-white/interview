@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <home-header></home-header>
+    <home-calendar></home-calendar>
     <home-main></home-main>
     <home-footer></home-footer>
   </div>
@@ -9,8 +10,9 @@
 <script>
 // 引入局部组件
 import HomeHeader from './components/Header'
+import HomeMain from './components/Main'
 import HomeFooter from './components/Footer'
-import HomeMain from './components/Main/Main'
+import HomeCalendar from './components/Calendar'
 
 export default {
   name: 'Home',
@@ -18,6 +20,7 @@ export default {
   components: {
     HomeHeader,
     HomeFooter,
+    HomeCalendar,
     HomeMain
   }
 }

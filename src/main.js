@@ -8,7 +8,11 @@ import '../static/reset.css'
 // 引入iconfont
 import './assets/icon/iconfont.css'
 import 'lib-flexible'
+// 引入 Swiper 轮播组件
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 
+Vue.use(VueAwesomeSwiper)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

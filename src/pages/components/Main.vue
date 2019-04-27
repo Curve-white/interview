@@ -1,6 +1,5 @@
 <template>
   <div class="main">
-    <div class="calendar">日历</div>
     <div class="selectButton">
       <input class="selectTime allday" type="buttom" value="全天可面试">
       <input class="selectTime forenoon" type="buttom" value="上午可面试">
@@ -24,12 +23,6 @@ export default {
   flex-direction: column;
   align-items: center;
   height: 1086px;
-}
-
-// 日历插件的样式
-.calendar{
-  height: 140px;
-  background: yellow;
 }
 
 // 以下为选择按钮的样式
