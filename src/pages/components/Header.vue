@@ -61,7 +61,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   height: 88px;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: bold;
 }
 .icon-x, .icon-more{

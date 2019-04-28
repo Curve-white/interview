@@ -11,6 +11,11 @@ import 'lib-flexible'
 // 引入 Swiper 轮播组件
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
+// 引入 moment 日期组件
+import moment from 'moment/moment'
+// 日期组件格式为中文
+moment.locale('zh-cn')
+Vue.prototype.$moment = moment
 
 Vue.use(VueAwesomeSwiper)
 Vue.config.productionTip = false

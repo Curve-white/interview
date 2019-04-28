@@ -1,44 +1,48 @@
 <template>
   <div class="calendar">
-    <swiper>
-      <!-- slides -->
-      <swiper-slide class="time">
-        <span class="timeInfo day">今天</span>
-        <span class="timeInfo dayNumber">3/30</span>
-      </swiper-slide>
-      <swiper-slide>I'm Slide 2</swiper-slide>
-      <swiper-slide>I'm Slide 3</swiper-slide>
-      <swiper-slide>I'm Slide 4</swiper-slide>
-      <swiper-slide>I'm Slide 5</swiper-slide>
-      <swiper-slide>I'm Slide 6</swiper-slide>
-      <swiper-slide>I'm Slide 7</swiper-slide>
-      <swiper-slide>I'm Slide 9</swiper-slide>
-      <swiper-slide>I'm Slide 10</swiper-slide>
-      <swiper-slide>I'm Slide 11</swiper-slide>
-      <swiper-slide>I'm Slide 12</swiper-slide>
-      <swiper-slide>I'm Slide 13</swiper-slide>
-      <swiper-slide>I'm Slide 14</swiper-slide>
-      <swiper-slide>I'm Slide 15</swiper-slide>
-  </swiper>
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <span class="time day">{{ datetime}}</span>
+        <span class="time dayNumber">{{dayNumber}}</span>
+      </div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+      <div class="swiper-slide">Slide 10</div>
+    </div>
+  </div>
   </div>
 </template>
 
 <script>
 
+// 引入swiper组件
+import Swiper from 'swiper'
+
 export default {
   name: 'HomeCalendar',
   data () {
     return {
-      swiperOption: {
-        // some swiper options/callbacks
-        // 所有的参数同 swiper 官方 api 参数
-        // 分页器挂载到swiper-pagination类对应的元素上
-        pagination: '.swiper-pagination',
-        loop: true, // 开启轮播图前后循环模式
-        freeMode: true,
-        slidesPerView: 2
-      }
+      datetime: this.$moment().format('ddd'),
+      dayNumber: this.$moment().format('MM') + '/' + this.$moment().format('DD')
     }
+  },
+  // 挂载swiper
+  mounted () {
+    Swiper('.swiper-container', {
+      // 设置slider容器同时显示的slider数量
+      slidesPerView: 5.5,
+      // 调整slide 之间的距离
+      spaceBetween: 0,
+      freeMode: true
+    })
   }
 }
 </script>
@@ -47,21 +51,42 @@ export default {
 // 日历插件的样式
 .calendar{
   height: 140px;
-  background: yellow;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  font-family: PingFangSC-Semibold;
+  background: #F4F4F4;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 .time{
-  width: 136px;
-  background: red;
-}
-.timeInfo{
-  font-family: PingFangSC-Semibold;
+  // font-family: PingFangSC-Semibold;
   font-size: 36px;
+  font-weight: 500;
   color: #333333;
   letter-spacing: 0;
   text-align: center;
   line-height: 36px;
 }
 .dayNumber{
+  margin-top: 10px;
   font-size: 28px;
   line-height: 28px;
 }
