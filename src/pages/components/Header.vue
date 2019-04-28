@@ -5,7 +5,7 @@
         <span class="iconfont icon-xinhao"></span>
         <span class="iconfont icon-wangluoxinhao"></span>
       </div>
-      <span class="time">9:41 AM</span>
+      <span class="time">{{nowtime}}</span>
       <div class="statusBar-right">
         <span>80%</span>
         <span class="iconfont icon-80dianliang"></span>
@@ -22,7 +22,13 @@
 <script>
 // 本组件对外输出的名字
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  data () {
+    return {
+      // 当前的时间  小时：分钟 上/下午
+      nowtime: this.$moment().format('hh:mm A')
+    }
+  }
 }
 </script>
 

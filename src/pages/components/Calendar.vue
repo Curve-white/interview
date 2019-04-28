@@ -31,7 +31,11 @@ export default {
   data () {
     return {
       datetime: this.$moment().format('ddd'),
-      dayNumber: this.$moment().format('MM') + '/' + this.$moment().format('DD')
+      dayNumber: this.$moment().format('MM/DD'),
+      timeList: [{
+        datetime: '',
+        dayNumber: ''
+      }]
     }
   },
   // 挂载swiper
