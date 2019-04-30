@@ -89,9 +89,8 @@ export default {
   align-items: center;
 }
 .time{
-  // font-family: PingFangSC-Semibold;
+  font-family: PingFangSC-Semibold;
   font-size: 36px;
-  font-weight: 500;
   color: #333333;
   letter-spacing: 0;
   text-align: center;
