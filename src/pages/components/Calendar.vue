@@ -3,19 +3,11 @@
   <!-- Swiper -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <span class="time day">{{ datetime}}</span>
-        <span class="time dayNumber">{{dayNumber}}</span>
+      <!-- 循环输出日期 -->
+      <div class="swiper-slide" v-for="(item,key) in DayList" :key="key">
+        <span class="time day">{{ item.week}}</span>
+        <span class="time dayNumber">{{item.date}}</span>
       </div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      <div class="swiper-slide">Slide 6</div>
-      <div class="swiper-slide">Slide 7</div>
-      <div class="swiper-slide">Slide 8</div>
-      <div class="swiper-slide">Slide 9</div>
-      <div class="swiper-slide">Slide 10</div>
     </div>
   </div>
   </div>
@@ -30,12 +22,8 @@ export default {
   name: 'HomeCalendar',
   data () {
     return {
-      datetime: this.$moment().format('ddd'),
-      dayNumber: this.$moment().format('MM/DD'),
-      timeList: [{
-        datetime: '',
-        dayNumber: ''
-      }]
+      // 将DayList初始化
+      DayList: []
     }
   },
   // 挂载swiper
@@ -47,8 +35,28 @@ export default {
       spaceBetween: 0,
       freeMode: true
     })
+    // 将GetDayList 赋值给 DayList
+    this.DayList = this.GetDayList()
+  },
+
+  methods: {
+    // 定义一个方法，获取到30天
+    GetDayList: function () {
+      let DayList = []
+      for (var i = 0; i < 30; i++) {
+        DayList.push({
+          week: this.$moment().add(i, 'days').format('ddd'),
+          date: this.$moment().add(i, 'days').format('MM/DD'),
+          today: this.$moment().add(i, 'days').format('YYYY/MM/DD')
+        })
+      }
+      DayList[0].week = '今天'
+      DayList[1].week = '明天'
+      return DayList
+    }
   }
 }
+
 </script>
 
 <style lang="scss" scoped>
