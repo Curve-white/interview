@@ -18,7 +18,13 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 750px;
   height: 120px;
+  border-top: 1px solid #DDDDDD;
+  opacity: 0.98;
+  background: #FAFAFA;
 }
 .footerMain{
   position: fixed;
