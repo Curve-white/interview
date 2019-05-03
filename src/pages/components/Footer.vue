@@ -20,7 +20,7 @@ export default {
   align-items: center;
   position: fixed;
   bottom: 0;
-  width: 750px;
+  width: 100%;
   height: 120px;
   border-top: 1px solid #DDDDDD;
   opacity: 0.98;

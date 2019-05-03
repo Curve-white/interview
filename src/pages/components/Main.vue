@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="selectButton">
-      <input class="selectTime allday" type="buttom" value="全天可面试">
+      <input class="selectTime allday" :class="{active: shows == 1}" type="buttom" value="全天可面试" @click="getAllday()">
       <input class="selectTime forenoon" type="buttom" value="上午可面试">
       <input class="selectTime afternoon" type="buttom" value="下午可面试">
     </div>
@@ -21,7 +21,7 @@ export default {
   data () {
     return {
       allHoursList: [],
-      ind: ''
+      shows: false
     }
   },
   mounted () {
@@ -34,6 +34,9 @@ export default {
         allHours.push(moment(i).format('HH:mm'))
       }
       return allHours
+    },
+    getAllday: function () {
+      this.shows = !this.shows
     }
   }
 }
@@ -64,6 +67,10 @@ export default {
 }
 .allday{
   width: 286px;
+}
+.active{
+  color: white;
+  background: #22B241;
 }
 .forenoon, .afternoon{
   width: 176px;
