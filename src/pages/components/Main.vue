@@ -1,12 +1,20 @@
 <template>
   <div class="main">
     <div class="selectButton">
-      <input class="selectTime allday" :class="{active: shows == 1}" type="buttom" value="全天可面试" @click="getAllday()">
-      <input class="selectTime forenoon" type="buttom" value="上午可面试">
-      <input class="selectTime afternoon" type="buttom" value="下午可面试">
+      <!-- :class="{active: shows == true}" 绑定一个class，名字是active， 显示为shows -->
+      <input class="selectTime allday" :class="{allActive: shows1 == true}" type="buttom" value="全天可面试" @click="getAllday()">
+      <input class="selectTime forenoon" :class="{foreActive: shows2 == true}" type="buttom" value="上午可面试" @click="getForenoon()">
+      <input class="selectTime afternoon" :class="{afterActive: shows3 == true}" type="buttom" value="下午可面试"  @click="getAfternoon()">
     </div>
     <div class="eachHour">
-      <div class="perHour" v-for="(item, key) in allHoursList" :key="key">{{item}}</div>
+      <div class="perHour"
+        :class="isactive == index ? 'perActive': ''"
+        v-for="(item, index) in allHoursList"
+        :key="index"
+        @click="getPerHour(index)"
+      >
+        {{item}}
+      </div>
     </div>
   </div>
 </template>
@@ -21,7 +29,12 @@ export default {
   data () {
     return {
       allHoursList: [],
-      shows: false
+      // 定义shows 为false ，就是不显示
+      index: '',
+      shows1: false,
+      shows2: false,
+      shows3: false,
+      isactive: -1
     }
   },
   mounted () {
@@ -35,7 +48,18 @@ export default {
       }
       return allHours
     },
+    // 点击事件的方法， 点击时对 shows 取反
     getAllday: function () {
+      this.shows1 = !this.shows1
+    },
+    getForenoon: function () {
+      this.shows2 = !this.shows2
+    },
+    getAfternoon: function () {
+      this.shows3 = !this.shows3
+    },
+    getPerHour: function (index) {
+      this.isactive = index
       this.shows = !this.shows
     }
   }
@@ -68,18 +92,23 @@ export default {
 .allday{
   width: 286px;
 }
-.active{
+// 对active样式
+.allActive{
   color: white;
   background: #22B241;
 }
-.forenoon, .afternoon{
-  width: 176px;
+.foreActive{
+  color: white;
+  background: #22B241;
 }
-.forenoon{
+.afterActive{
   color: white;
   background: #22B241;
 }
 
+.forenoon, .afternoon{
+  width: 176px;
+}
 .eachHour{
   display: flex;
   flex-direction: row;
@@ -91,11 +120,15 @@ export default {
   justify-content: center;
   align-items: center;
   width: 168px;
-  height: 113px;;
+  height: 113px;
+  color: #BBBBBB;
   background: #EEEEEE;
   border: 1px solid #DDDDDD;
   border-radius: 8px 0 0 0;
-
+}
+.perActive{
+  color: white;
+  background: #22B241;
 }
 
 </style>
