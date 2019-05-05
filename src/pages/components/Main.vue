@@ -8,7 +8,7 @@
     </div>
     <div class="eachHour">
       <div class="perHour"
-        :class="isactive == index ? 'perActive': ''"
+        :class="{perActive: selectedList.includes(index)}"
         v-for="(item, index) in allHoursList"
         :key="index"
         @click="getPerHour(index)"
@@ -34,7 +34,7 @@ export default {
       shows1: false,
       shows2: false,
       shows3: false,
-      isactive: -1
+      selectedList: [] // 选中的选项
     }
   },
   mounted () {
@@ -58,9 +58,18 @@ export default {
     getAfternoon: function () {
       this.shows3 = !this.shows3
     },
-    getPerHour: function (index) {
-      this.isactive = index
-      this.shows = !this.shows
+    getPerHour: function (index) { // 点击单个选项触发的函数
+    // includes() 判断是否包含某一元素，返回true 或false，表示是否包含元素
+      if (this.selectedList.includes(index)) {
+        // filter() 用于把array 的某些元素过滤掉，filter()把传入的函数依次作用于每个元素，然后根据返回值是 true 还是false 决定保留还是丢弃该元素：生成新的数组
+        this.selectedList = this.selectedList.filter(item => {
+          // 当 filter() 为假false时删除元素
+          return item !== index
+        })
+      } else {
+        // filter() 为真true时当index push到数组里面
+        this.selectedList.push(index)
+      }
     }
   }
 }
