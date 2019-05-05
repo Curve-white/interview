@@ -30,7 +30,6 @@ export default {
     return {
       allHoursList: [],
       // 定义shows 为false ，就是不显示
-      index: '',
       shows1: false,
       shows2: false,
       shows3: false,
