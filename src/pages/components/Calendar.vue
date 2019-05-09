@@ -33,7 +33,9 @@ export default {
       slidesPerView: 5.5,
       // 调整slide 之间的距离
       spaceBetween: 0,
-      freeMode: true
+      freeMode: true,
+      observer: true, // 修改swiper自己或子元素时，自动初始化swiper
+      observeParents: true // 修改swiper的父元素时，自动初始化swiper
     })
     // 将GetDayList 赋值给 DayList
     this.DayList = this.GetDayList()

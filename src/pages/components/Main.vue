@@ -2,9 +2,24 @@
   <div class="main">
     <div class="selectButton">
       <!-- :class="{active: shows == true}" 绑定一个class，名字是active， 显示为shows -->
-      <input class="selectTime allday" :class="{allActive: shows1 == true}" type="buttom" value="全天可面试" @click="getAllday()">
-      <input class="selectTime forenoon" :class="{foreActive: shows2 == true}" type="buttom" value="上午可面试" @click="getForenoon()">
-      <input class="selectTime afternoon" :class="{afterActive: shows3 == true}" type="buttom" value="下午可面试"  @click="getAfternoon()">
+      <input class="selectTime allday"
+        :class="{allActive: shows1 == true}"
+        type="buttom"
+        value="全天可面试"
+        @click="getAllday()"
+      >
+      <input class="selectTime forenoon"
+        :class="{foreActive: shows2 == true}"
+        type="buttom"
+        value="上午可面试"
+        @click="getForenoon()"
+      >
+      <input class="selectTime afternoon"
+        :class="{afterActive: shows3 == true}"
+        type="buttom"
+        value="下午可面试"
+        @click="getAfternoon()"
+      >
     </div>
     <div class="eachHour">
       <div class="perHour"
@@ -68,6 +83,12 @@ export default {
       } else {
         // filter() 为真true时当index push到数组里面
         this.selectedList.push(index)
+      }
+      // 当 selectedList的个数等于allHoursList个数的时候，shows1为 true
+      if (this.selectedList.length === this.allHoursList.length) {
+        this.shows1 = true
+      } else {
+        this.shows1 = false
       }
     }
   }
