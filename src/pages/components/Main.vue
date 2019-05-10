@@ -22,14 +22,14 @@
       >
     </div>
     <div class="eachHour">
-      <div class="perHour"
+      <input type="buttom"
+        :value="item"
+        class="perHour"
         :class="{perActive: selectedList.includes(index)}"
         v-for="(item, index) in allHoursList"
         :key="index"
         @click="getPerHour(index)"
       >
-        {{item}}
-      </div>
     </div>
   </div>
 </template>
@@ -54,6 +54,7 @@ export default {
   mounted () {
     this.allHoursList = this.getAllHours()
   },
+
   methods: {
     getAllHours: function () {
       let allHours = []
@@ -149,6 +150,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: 168px;
+  text-align: center;
   height: 113px;
   color: #BBBBBB;
   background: #EEEEEE;
